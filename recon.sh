@@ -99,7 +99,7 @@ scan() {
     then
       echo -e ">> Checking open ports with \e[36mMasscan\e[0m"
       ## LAUNCH MASSCAN
-      masscan -p1-65535 -iL $ResultsPath/$domain/IPs.txt --rate=1000 -oJ $ResultsPath/$domain/masscan.json
+      masscan -p1-65535 -iL $ResultsPath/$domain/IPs.txt --rate=1000 -oJ $ResultsPath/$domain/masscan.json > /dev/null 2>&1
     fi
 
     ## CHECK WAF WITH WAFW00F
